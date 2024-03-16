@@ -7,6 +7,10 @@ async function getPoke() {
     const pokemon = await response.json();
     document.getElementById("sprite").src = pokemon.sprites.front_default;
     document.getElementById("name").innerHTML = pokemon.name;
+    document.getElementById("bioSingle").innerHTML = pokemon.stats[0].base_stat + 
+    " " + pokemon.stats[0].stat.name + "<br>" + pokemon.stats[1].base_stat + 
+    " " + pokemon.stats[1].stat.name + "<br>" + pokemon.stats[2].base_stat + 
+    " " + pokemon.stats[2].stat.name;
     console.log(pokemon);
 
     } catch (error) {
