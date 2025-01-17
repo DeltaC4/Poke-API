@@ -16,6 +16,10 @@ body {
     border-radius: 10px;
 }
 
+#singleContainer {
+    padding-bottom: 2%;
+}
+
 .main {
     padding-top: 20px;
     font-size: 5vw;
@@ -31,7 +35,7 @@ body {
     display: inline-block;
     width: 40%;
     border-radius: 10px;
-    background-color: rgb(146, 146, 225);
+    background-color: rgb(147, 147, 228);
     margin-bottom: 2%;
 }
 
