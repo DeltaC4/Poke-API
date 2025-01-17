@@ -8,6 +8,10 @@ body {
     border-radius: 10px;
 }
 
+.solid {
+    width: 90%;
+}
+
 .container {
     text-align: center;
     background-color: rgb(169, 169, 255);
@@ -94,3 +98,20 @@ body {
     }
 
 }
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .main {
+        font-size: 2vw;
+    }
+    #name, #firstName, #secondName, #thirdName {
+        font-size: 2vw;
+    }
+    #s , #t, #f, #single {
+        display: inline-block;
+        width: 20%;
+        border-radius: 10px;
+        background-color: rgb(147, 147, 228);
+        margin-bottom: 2%;
+    }
+  }

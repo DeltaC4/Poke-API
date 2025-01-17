@@ -11,11 +11,17 @@
 
 <body>
     <h1 id="title">POKEAPI</h1>
+    <hr class="solid">
+    <p id="title">Fun little web app that uses the PokeAPI, where you can select
+        a Pokemon by name or ID (ex. pikachu or 6) and get some information about it. You can also get 3 random Pokemon
+        and see their information.
+    </p>
+    <hr class="solid">
     <div class="container">
         <h1 class="main">Enter a Pokemon</h1>
         <button id="myBtn" onclick="getPoke()">Get Pokemon</button><br>
-        <button id="myBtn" onclick="decrement()">Decrement</button><br>
-        <input onchange="getPoke()" id="myInput" type="text">
+        <button id="myBtn" onclick="decrement()">Decrement Health</button><br>
+        <input onchange="getPoke()" id="myInput" type="text" placeholder="Enter Pokemon Name or ID">
         <br>
         <div id="single">
             <h1 id="name"></h1>
