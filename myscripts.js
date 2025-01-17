@@ -1,31 +1,53 @@
-async function getPoke() {
-    try {
+function decrement() {
+  if (singleHP >= 10) {
+    singleHP -= 10;
+    document.getElementById("pokeHP").innerHTML = singleHP + 
+    " " + singlePokemon.stats[0].stat.name + "<br>" + singlePokemon.stats[1].base_stat + 
+    " " + singlePokemon.stats[1].stat.name + "<br>" + singlePokemon.stats[2].base_stat + 
+    " " + singlePokemon.stats[2].stat.name;
+  } else {
+    singleHP = 0;
+    document.getElementById("pokeHP").innerHTML = singleHP + 
+    " " + singlePokemon.stats[0].stat.name + "<br>" + singlePokemon.stats[1].base_stat + 
+    " " + singlePokemon.stats[1].stat.name + "<br>" + singlePokemon.stats[2].base_stat + 
+    " " + singlePokemon.stats[2].stat.name;
+  }
+}
 
-    const choiceValue  = document.getElementById("myInput").value;
+let singleHP = 0;
+let singlePokemon;
+
+async function getPoke() {
+  try {
+    const choiceValue = document.getElementById("myInput").value;
     const choice = choiceValue.toLowerCase();
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + choice);
     const pokemon = await response.json();
+    singlePokemon = pokemon;
     document.getElementById("sprite").src = pokemon.sprites.front_default;
     document.getElementById("name").innerHTML = pokemon.name;
+    singleHP = pokemon.stats[0].base_stat;
+    document.getElementById("pokeHP").innerHTML = singleHP + 
+    " " + pokemon.stats[0].stat.name + "<br>" + pokemon.stats[1].base_stat + 
+    " " + pokemon.stats[1].stat.name + "<br>" + pokemon.stats[2].base_stat + 
+    " " + pokemon.stats[2].stat.name;
     console.log(pokemon);
-
-    } catch (error) {
-        // console.error(error);
-        document.getElementById("name").innerHTML = "Not a Pokemon!";
-        document.getElementById("sprite").src = "";
-    }
+  } catch (error) {
+    document.getElementById("name").innerHTML = "Not a Pokemon!";
+    document.getElementById("sprite").src = "";
+    document.getElementById("pokeHP").innerHTML = "";
   }
+}
 
-  async function getThreeRan() {
-    try {
-
-      let dex = [];
-      for (let index = 0; index < 3; index++) {
-        const rand = Math.floor(Math.random() * 100);
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + rand);
-        const pokemon = await response.json(); 
-        dex[index] = pokemon;
-      }
+async function getThreeRan() {
+  try {
+    let dex = [];
+    for (let index = 0; index < 3; index++) {
+      const rand = Math.floor(Math.random() * 100);
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/" + rand);
+      const pokemon = await response.json(); 
+      dex[index] = pokemon;
+    }
 
     document.getElementById("firstName").innerHTML = dex[0].name;
     document.getElementById("first").src = dex[0].sprites.front_default;
@@ -50,8 +72,7 @@ async function getPoke() {
 
     console.log(dex);
 
-
-    } catch (error) {
-        console.error(error);
-    }
+  } catch (error) {
+    console.error(error);
   }
+}

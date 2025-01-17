@@ -2,6 +2,12 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+#title {
+    margin: auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
 .container {
     text-align: center;
     background-color: rgb(169, 169, 255);
@@ -12,6 +18,7 @@ body {
 
 .main {
     padding-top: 20px;
+    font-size: 5vw;
 }
 
 #three {
@@ -20,12 +27,16 @@ body {
     background-color: rgb(169, 169, 255);
 }
 
-#s , #t, #f {
+#s , #t, #f, #single {
     display: inline-block;
-    width: 25%;
+    width: 40%;
     border-radius: 10px;
     background-color: rgb(146, 146, 225);
     margin-bottom: 2%;
+}
+
+#name, #firstName, #secondName, #thirdName {
+    font-size: 5vw;
 }
 
 #myBtn {
@@ -42,7 +53,7 @@ body {
       height: 40px;
       line-height: 20px;
       list-style: none;
-      margin: 0;
+      margin: 2px;
       padding: 0px 16px;
       position: relative;
       text-decoration: none;
@@ -65,8 +76,10 @@ body {
     font-weight: 400;
     padding: 4px 8px;
     margin-top: 5px;
+    margin-bottom: 5px;
     min-height: 28px;
     vertical-align: middle;
+    width: 15vh;
     transition: background-color .24s,box-shadow .24s;
     transition-property: background-color, box-shadow;
     transition-duration: 0.24s, 0.24s;

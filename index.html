@@ -6,16 +6,22 @@
     <title>POKEAPI</title>
     <script src="myscripts.js"></script> 
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/icon.bmp">
 </head>
 
 <body>
+    <h1 id="title">POKEAPI</h1>
     <div class="container">
         <h1 class="main">Enter a Pokemon</h1>
         <button id="myBtn" onclick="getPoke()">Get Pokemon</button><br>
+        <button id="myBtn" onclick="decrement()">Decrement</button><br>
         <input onchange="getPoke()" id="myInput" type="text">
         <br>
-        <h1 id="name"></h1>
-        <img id="sprite" src="">
+        <div id="single">
+            <h1 id="name"></h1>
+            <img id="sprite" src="">
+            <p id="pokeHP"></p>
+        </div>
     </div>
 
     <div class="container">
